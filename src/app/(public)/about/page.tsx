@@ -4,10 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ShieldCheck, CheckCircle2, PhoneCall, MapPin, ArrowRight, Award, FileCheck } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | Jay Shree Ram Bike Point — Muzaffarpur",
+  title: "About Us | Jai Shree Ram Bike Point — Sipahpur, Muzaffarpur",
   description:
-    "Learn about Jay Shree Ram Bike Point at Gobarsahi Chowk, Muzaffarpur. Verified second-hand bikes, mechanic inspection, and hassle-free paper transfer.",
+    "Learn about Jai Shree Ram Bike Point at Imamganj Naka, Sipahpur, Muzaffarpur. Verified second-hand bikes, mechanic inspection, and hassle-free paper transfer.",
 };
+
+const MAPS_URL =
+  "https://www.google.com/maps/place/JAI+SHREE+RAM+BIKE+POINT/@26.155375,85.4114003,17z";
 
 export default function AboutPage(): React.JSX.Element {
   return (
@@ -15,13 +18,13 @@ export default function AboutPage(): React.JSX.Element {
       {/* Hero Section */}
       <div className="text-center space-y-4 max-w-3xl mx-auto">
         <span className="text-xs font-bold uppercase tracking-wider text-saffron-600 dark:text-saffron-400 font-mono">
-          Muzaffarpur Dealership
+          Motorcycle Dealer · Sipahpur, Muzaffarpur
         </span>
         <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-foreground">
-          About Jay Shree Ram Bike Point
+          About Jai Shree Ram Bike Point
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Located at Gobarsahi Chowk, Muzaffarpur, Jay Shree Ram Bike Point provides buyers and sellers with verified, mechanic-checked pre-owned motorcycles and scooters with complete registration transfer assistance.
+          Located at No-04, Imamganj Naka, Sipahpur, Muzaffarpur, Jai Shree Ram Bike Point provides buyers and sellers with verified, mechanic-checked pre-owned motorcycles and scooters with complete registration transfer assistance.
         </p>
       </div>
 
@@ -55,7 +58,7 @@ export default function AboutPage(): React.JSX.Element {
       {/* Dealership Details Section */}
       <div className="p-8 sm:p-10 rounded-3xl bg-muted/40 border border-border space-y-6">
         <h2 className="text-2xl font-heading font-bold text-foreground">
-          Why Visit Our Gobarsahi Chowk Showroom?
+          Why Visit Our Sipahpur Showroom?
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-medium text-foreground">
           <div className="flex items-center gap-2">
@@ -83,10 +86,10 @@ export default function AboutPage(): React.JSX.Element {
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>
-          <a href="tel:+919934212567">
+          <a href="tel:+916203777760">
             <Button variant="outline" className="gap-2 cursor-pointer">
               <PhoneCall className="h-4 w-4 text-saffron-500" />
-              <span>Call Dealership (+91 99342 12567)</span>
+              <span>Call Dealership (+91 62037 77760)</span>
             </Button>
           </a>
         </div>
@@ -98,14 +101,13 @@ export default function AboutPage(): React.JSX.Element {
           <MapPin className="h-5 w-5 text-saffron-500 shrink-0 mt-0.5" />
           <div>
             <h4 className="font-heading font-bold text-sm text-foreground">Showroom Location</h4>
-            <p className="text-xs text-muted-foreground">Gobarsahi Chowk, Muzaffarpur, Bihar 842001 (Mon–Sat: 9:00 AM – 7:30 PM)</p>
+            <p className="text-xs text-muted-foreground">
+              No-04, Imamganj, Naka, Sipahpur, Bihar 842001 (Mon–Sat: 9:00 AM – 7:00 PM)
+            </p>
+            <p className="text-[11px] text-muted-foreground mt-0.5">Located in: Radha Hari Motors First Choice</p>
           </div>
         </div>
-        <a
-          href="https://maps.google.com/?q=Gobarsahi+Chowk,+Muzaffarpur,+Bihar+842001"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
           <Button variant="outline" size="sm" className="whitespace-nowrap font-bold">
             Get Directions
           </Button>

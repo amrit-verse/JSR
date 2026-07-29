@@ -49,7 +49,7 @@ interface BikeCardProps {
 
 export function BikeCard({
   bike,
-  whatsappNumber = "+919934212567",
+  whatsappNumber = "+916203777760",
 }: BikeCardProps): React.JSX.Element {
   const isNew = isWithinDays(new Date(bike.createdAt), NEW_BIKE_DAYS);
   const rawCover =
@@ -125,7 +125,7 @@ export function BikeCard({
           </Link>
           <p className="text-xs text-muted-foreground flex items-center gap-1">
             <MapPin className="h-3 w-3 text-saffron-500 shrink-0" />
-            <span>Jay Shree Ram Bike Point • Gobarsahi Chowk</span>
+            <span>Jai Shree Ram Bike Point • Sipahpur</span>
           </p>
         </div>
 

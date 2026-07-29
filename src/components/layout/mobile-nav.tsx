@@ -58,7 +58,7 @@ export function MobileNav({
               </span>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-base text-foreground leading-none">
-                  Jay Shree Ram
+                  Jai Shree Ram
                 </span>
                 <span className="text-xs text-saffron-600 font-semibold tracking-wider uppercase mt-1">
                   Bike Point

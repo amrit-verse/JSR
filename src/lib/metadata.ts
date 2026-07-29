@@ -4,9 +4,9 @@ import { Metadata } from "next";
 // SEO Metadata & Schema.org Structured Data Helpers
 // =============================================================================
 
-const APP_NAME = "Jay Shree Ram Bike Point";
+const APP_NAME = "Jai Shree Ram Bike Point";
 const APP_DESCRIPTION =
-  "Buy verified second-hand motorcycles and scooters in Muzaffarpur, Bihar. Mechanic-inspected, document-verified, best prices at Jay Shree Ram Bike Point, Gobarsahi Chowk.";
+  "Buy verified second-hand motorcycles and scooters at Jai Shree Ram Bike Point, Sipahpur, Muzaffarpur. Mechanic-inspected, document-verified, best prices at No-04, Imamganj Naka.";
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://jsrbikepoint.com";
 
 /**
@@ -25,12 +25,12 @@ export function getBaseMetadata(): Metadata {
     },
     keywords: [
       "second hand bikes",
-      "used bikes",
-      "Muzaffarpur",
+      "used bikes Muzaffarpur",
+      "Sipahpur",
+      "Imamganj",
       "Bihar",
       "motorcycle dealer",
-      "Jay Shree Ram Bike Point",
-      "Gobarsahi Chowk",
+      "Jai Shree Ram Bike Point",
       "Hero",
       "Honda",
       "Bajaj",
@@ -140,7 +140,7 @@ export function getBusinessJsonLd(settings: {
     address: {
       "@type": "PostalAddress",
       streetAddress: settings.address,
-      addressLocality: "Muzaffarpur",
+      addressLocality: "Sipahpur",
       addressRegion: "Bihar",
       postalCode: "842001",
       addressCountry: "IN",

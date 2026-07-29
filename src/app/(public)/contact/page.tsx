@@ -6,6 +6,11 @@ import { Phone, MessageCircle, MapPin, Clock, ExternalLink, Send } from "lucide-
 
 export const dynamic = "force-static";
 
+const MAPS_URL =
+  "https://www.google.com/maps/place/JAI+SHREE+RAM+BIKE+POINT/@26.155375,85.4114003,17z";
+const PHONE = "+916203777760";
+const PHONE_DISPLAY = "+91 62037 77760";
+
 export default function ContactPage(): React.JSX.Element {
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
@@ -15,7 +20,7 @@ export default function ContactPage(): React.JSX.Element {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     const parts = [
-      `Hello Jay Shree Ram Bike Point,`,
+      `Hello Jai Shree Ram Bike Point,`,
       ``,
       `Name: ${name || "Not provided"}`,
       `Mobile: ${phone || "Not provided"}`,
@@ -25,7 +30,7 @@ export default function ContactPage(): React.JSX.Element {
       .filter(Boolean)
       .join("\n");
 
-    const waUrl = `https://wa.me/919934212567?text=${encodeURIComponent(parts)}`;
+    const waUrl = `https://wa.me/${PHONE.replace("+", "")}?text=${encodeURIComponent(parts)}`;
     window.open(waUrl, "_blank", "noopener,noreferrer");
   }
 
@@ -37,35 +42,31 @@ export default function ContactPage(): React.JSX.Element {
           Dealership Assistance
         </span>
         <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-foreground">
-          Contact Jay Shree Ram Bike Point
+          Contact Jai Shree Ram Bike Point
         </h1>
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-          Have a question about a bike, paper transfer, or want to schedule a test ride? Call or visit us directly at Gobarsahi Chowk, Muzaffarpur.
+          Have a question about a bike, paper transfer, or want to schedule a test ride? Call or visit us at Imamganj Naka, Sipahpur, Muzaffarpur.
         </p>
       </div>
 
-      {/* Main Grid: Contact Info + Inquiry Form */}
+      {/* Main Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* Left Column: Direct Dealership Contact Info (5 Cols) */}
+        {/* Left: Contact Info */}
         <div className="lg:col-span-5 space-y-4">
           <div className="p-6 rounded-2xl bg-card border border-border shadow-card space-y-5">
             <h2 className="font-heading font-bold text-lg text-foreground border-b border-border pb-3">
               Direct Dealership Contacts
             </h2>
 
-            {/* Phone Call */}
+            {/* Phone */}
             <div className="flex items-start gap-3.5">
               <div className="h-10 w-10 rounded-xl bg-saffron-500/10 text-saffron-600 dark:text-saffron-400 flex items-center justify-center shrink-0">
                 <Phone className="h-5 w-5" />
               </div>
               <div className="space-y-1">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  Phone Call
-                </span>
-                <p className="font-heading font-bold text-sm text-foreground">
-                  +91 99342 12567
-                </p>
-                <a href="tel:+919934212567" className="inline-block pt-1">
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Phone Call</span>
+                <p className="font-heading font-bold text-sm text-foreground">{PHONE_DISPLAY}</p>
+                <a href={`tel:${PHONE}`} className="inline-block pt-1">
                   <Button size="xs" className="bg-saffron-500 hover:bg-saffron-600 text-white font-bold gap-1">
                     <Phone className="h-3 w-3" />
                     <span>Call Now</span>
@@ -80,14 +81,10 @@ export default function ContactPage(): React.JSX.Element {
                 <MessageCircle className="h-5 w-5" />
               </div>
               <div className="space-y-1">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  WhatsApp
-                </span>
-                <p className="font-heading font-bold text-sm text-foreground">
-                  +91 99342 12567
-                </p>
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">WhatsApp</span>
+                <p className="font-heading font-bold text-sm text-foreground">{PHONE_DISPLAY}</p>
                 <a
-                  href="https://wa.me/919934212567?text=Hello%20Jay%20Shree%20Ram%20Bike%20Point%2C%20I%20have%20an%20inquiry%20about%20your%20bikes."
+                  href={`https://wa.me/${PHONE.replace("+", "")}?text=Hello%20Jai%20Shree%20Ram%20Bike%20Point%2C%20I%20have%20an%20inquiry%20about%20your%20bikes.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block pt-1"
@@ -106,14 +103,13 @@ export default function ContactPage(): React.JSX.Element {
                 <MapPin className="h-5 w-5" />
               </div>
               <div className="space-y-1">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  Showroom Address
-                </span>
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Showroom Address</span>
                 <p className="font-heading font-bold text-xs text-foreground leading-snug">
-                  Gobarsahi Chowk, Muzaffarpur, Bihar 842001
+                  No-04, Imamganj, Naka, Sipahpur, Bihar 842001
                 </p>
+                <p className="text-[11px] text-muted-foreground">Located in: Radha Hari Motors First Choice</p>
                 <a
-                  href="https://maps.google.com/?q=Gobarsahi+Chowk,+Muzaffarpur,+Bihar+842001"
+                  href={MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-xs text-saffron-600 dark:text-saffron-400 font-bold pt-1"
@@ -124,25 +120,20 @@ export default function ContactPage(): React.JSX.Element {
               </div>
             </div>
 
-            {/* Opening Hours */}
+            {/* Hours */}
             <div className="flex items-start gap-3.5 border-t border-border pt-4">
               <div className="h-10 w-10 rounded-xl bg-muted text-muted-foreground flex items-center justify-center shrink-0">
                 <Clock className="h-5 w-5" />
               </div>
               <div className="space-y-0.5">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  Opening Hours
-                </span>
-                <p className="font-heading font-bold text-xs text-foreground">
-                  Mon – Sat: 9:00 AM – 7:30 PM
-                </p>
-                <p className="text-[11px] text-muted-foreground">Sunday: Closed</p>
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Opening Hours</span>
+                <p className="font-heading font-bold text-xs text-foreground">Mon – Sat: 9:00 AM – 7:00 PM</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Column: WhatsApp Inquiry Form (7 Cols) */}
+        {/* Right: Inquiry Form */}
         <div className="lg:col-span-7">
           <div className="p-6 sm:p-8 rounded-2xl bg-card border border-border shadow-card space-y-6">
             <div className="space-y-1">

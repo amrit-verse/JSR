@@ -7,9 +7,9 @@ import { getHomepageData } from "@/actions/bike-actions";
 import { ShieldCheck, Award, ThumbsUp, ArrowRight, PhoneCall, Sparkles } from "lucide-react";
 
 export const metadata = {
-  title: "Jay Shree Ram Bike Point — Best Second-Hand Bikes in Muzaffarpur",
+  title: "Jai Shree Ram Bike Point — Best Second-Hand Bikes in Muzaffarpur",
   description:
-    "Buy verified second-hand motorcycles and scooters in Muzaffarpur, Bihar. Inspection checked, easy document transfer, best prices at Gobarsahi Chowk.",
+    "Buy verified second-hand motorcycles and scooters in Muzaffarpur, Bihar. Inspection checked, easy document transfer, best prices at No-04, Imamganj Naka, Sipahpur.",
 };
 
 export default async function HomePage(): Promise<React.JSX.Element> {
@@ -29,7 +29,7 @@ export default async function HomePage(): Promise<React.JSX.Element> {
               Browse Inspected <span className="text-saffron-400">Second-Hand Bikes</span> Ready For Transfer.
             </h1>
             <p className="text-sm sm:text-base text-charcoal-300 max-w-2xl leading-relaxed">
-              Every bike is mechanic-checked, engine tested, and ready for instant RC transfer. Visit us at Gobarsahi Chowk, Muzaffarpur.
+              Every bike is mechanic-checked, engine tested, and ready for instant RC transfer. Visit us at Imamganj Naka, Sipahpur, Muzaffarpur.
             </p>
             <div className="flex flex-wrap gap-3.5 pt-1">
               <Link href="/bikes">
@@ -38,7 +38,7 @@ export default async function HomePage(): Promise<React.JSX.Element> {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <a href="tel:+919934212567">
+              <a href="tel:+916203777760">
                 <Button variant="outline" className="border-charcoal-700 bg-charcoal-900/60 hover:bg-charcoal-800 text-white font-bold h-11 sm:h-12 px-6 rounded-xl gap-2 cursor-pointer">
                   <PhoneCall className="h-4 w-4 text-saffron-400" />
                   <span>Call Dealership</span>
@@ -108,7 +108,7 @@ export default async function HomePage(): Promise<React.JSX.Element> {
           <div className="space-y-2">
             <ThumbsUp className="h-8 w-8 text-emerald-500" />
             <h3 className="text-base font-heading font-bold text-foreground">Best Price Guarantee</h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">Fair market pricing with zero hidden commission charges at Gobarsahi Chowk.</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Fair market pricing with zero hidden commission charges at Imamganj Naka, Sipahpur.</p>
           </div>
         </div>
       </section>

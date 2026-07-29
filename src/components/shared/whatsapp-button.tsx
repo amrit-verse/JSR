@@ -9,11 +9,11 @@ interface FloatingWhatsAppProps {
 }
 
 export function FloatingWhatsAppButton({
-  phone = "+919934212567",
+  phone = "+916203777760",
 }: FloatingWhatsAppProps): React.JSX.Element {
   const waUrl = getWhatsAppUrl(
     phone,
-    "Hello Jay Shree Ram Bike Point, I am visiting your website and would like to inquire about available second-hand bikes."
+    "Hello Jai Shree Ram Bike Point, I am visiting your website and would like to inquire about available second-hand bikes."
   );
 
   return (

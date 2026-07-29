@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { SearchX, Bike, ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
 
 export const metadata = {
-  title: "Second-Hand Bikes & Scooters Inventory | Jay Shree Ram Bike Point",
+  title: "Second-Hand Bikes & Scooters Inventory | Jai Shree Ram Bike Point",
   description:
-    "Explore available second-hand motorcycles and scooters in Muzaffarpur, Bihar. Multi-brand inventory, inspected engines, best market prices.",
+    "Explore available second-hand motorcycles and scooters in Muzaffarpur, Bihar. Multi-brand inventory, inspected engines, best market prices at Sipahpur.",
 };
 
 interface InventoryPageProps {

@@ -46,12 +46,12 @@ export async function generateMetadata({
 
   if (!bike) {
     return {
-      title: "Bike Not Found | Jay Shree Ram Bike Point",
+      title: "Bike Not Found | Jai Shree Ram Bike Point",
     };
   }
 
   const title = `${bike.year} ${bike.brand} ${bike.model} for Sale in Muzaffarpur — ${formatPrice(bike.price)}`;
-  const description = `Buy inspected ${bike.year} ${bike.brand} ${bike.model} at Jay Shree Ram Bike Point, Gobarsahi Chowk. Price: ${formatPrice(bike.price)}, Odometer: ${formatOdometer(bike.odometer)}, Condition: ${CONDITION_LABELS[bike.condition] || bike.condition}. Instant RC Transfer.`;
+  const description = `Buy inspected ${bike.year} ${bike.brand} ${bike.model} at Jai Shree Ram Bike Point, Sipahpur. Price: ${formatPrice(bike.price)}, Odometer: ${formatOdometer(bike.odometer)}, Condition: ${CONDITION_LABELS[bike.condition] || bike.condition}. Instant RC Transfer.`;
 
   const mainImage = bike.images[0]?.url;
 
@@ -78,7 +78,7 @@ export default async function BikeDetailPage({
 
   const title = `${bike.year} ${bike.brand} ${bike.model}`;
   const whatsappMsg = getWhatsAppMessage(title, formatPrice(bike.price));
-  const whatsappUrl = getWhatsAppUrl("+919934212567", whatsappMsg);
+  const whatsappUrl = getWhatsAppUrl("+916203777760", whatsappMsg);
 
   return (
     <div className="container mx-auto px-4 py-6 sm:py-10 space-y-10">
@@ -134,7 +134,7 @@ export default async function BikeDetailPage({
               </h1>
               <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
                 <MapPin className="h-3.5 w-3.5 text-saffron-500 shrink-0" />
-                <span>Jay Shree Ram Bike Point • Gobarsahi Chowk, Muzaffarpur</span>
+                <span>Jai Shree Ram Bike Point • Sipahpur, Muzaffarpur</span>
               </p>
             </div>
 
@@ -202,7 +202,7 @@ export default async function BikeDetailPage({
                   </Button>
                 </a>
 
-                <a href="tel:+919934212567" className="block">
+                <a href="tel:+916203777760" className="block">
                   <Button variant="outline" className="w-full h-11 border-border font-semibold rounded-xl gap-2 cursor-pointer">
                     <PhoneCall className="h-4 w-4 text-saffron-500" />
                     <span>Check Availability via Phone</span>

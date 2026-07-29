@@ -51,10 +51,10 @@ export function Header({
           </div>
           <div className="flex flex-col">
             <span className="font-heading font-bold text-lg sm:text-xl text-charcoal-900 dark:text-charcoal-50 tracking-tight leading-none group-hover:text-saffron-600 transition-colors">
-              Jay Shree Ram
+              Jai Shree Ram
             </span>
             <span className="text-[10px] sm:text-xs text-saffron-600 dark:text-saffron-400 font-semibold tracking-widest uppercase mt-0.5">
-              Bike Point • Muzaffarpur
+              Bike Point • Sipahpur
             </span>
           </div>
         </Link>
@@ -117,7 +117,7 @@ export function Header({
           </Link>
 
           {/* Call Quick Action */}
-          <a href="tel:+919934212567">
+          <a href="tel:+916203777760">
             <Button
               size="sm"
               className="hidden lg:inline-flex bg-saffron-500 hover:bg-saffron-600 text-white font-semibold rounded-lg shadow-sm gap-1.5 cursor-pointer"
