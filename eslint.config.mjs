@@ -13,6 +13,17 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  // Strict quality rules
+  {
+    rules: {
+      "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+      "eqeqeq": ["error", "always"],
+      "prefer-const": "error",
+      "no-var": "error",
+      "curly": ["error", "all"],
+      "no-duplicate-imports": "error",
+    },
+  },
 ]);
 
 export default eslintConfig;

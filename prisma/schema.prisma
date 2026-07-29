@@ -1,0 +1,122 @@
+// =============================================================================
+// Jay Shree Ram Bike Point — Prisma Schema
+// =============================================================================
+// Database: PostgreSQL (Neon Serverless)
+// Convention: camelCase in Prisma, snake_case in PostgreSQL via @map()
+// =============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// =============================================================================
+// Enums
+// =============================================================================
+
+enum FuelType {
+  PETROL
+  ELECTRIC
+}
+
+enum Transmission {
+  MANUAL
+  AUTOMATIC
+}
+
+enum BikeCondition {
+  EXCELLENT
+  VERY_GOOD
+  GOOD
+  AVERAGE
+}
+
+enum OwnerNumber {
+  FIRST
+  SECOND
+  THIRD_PLUS
+}
+
+// =============================================================================
+// Models
+// =============================================================================
+
+model Bike {
+  id                 String        @id @default(uuid())
+  slug               String        @unique
+  brand              String
+  model              String
+  year               Int
+  price              Int
+  engineCC           Int           @map("engine_cc")
+  odometer           Int
+  fuelType           FuelType      @map("fuel_type")
+  transmission       Transmission
+  condition          BikeCondition
+  ownerNumber        OwnerNumber   @map("owner_number")
+  colour             String
+  registrationNumber String?       @map("registration_number")
+  description        String
+  features           String[]
+  isSold             Boolean       @default(false) @map("is_sold")
+  isFeatured         Boolean       @default(false) @map("is_featured")
+  rcAvailable        Boolean       @default(false) @map("rc_available")
+  insuranceAvailable Boolean       @default(false) @map("insurance_available")
+  taxPaid            Boolean       @default(false) @map("tax_paid")
+  images             BikeImage[]
+  createdAt          DateTime      @default(now()) @map("created_at")
+  updatedAt          DateTime      @updatedAt @map("updated_at")
+
+  @@index([brand])
+  @@index([isFeatured, isSold])
+  @@index([createdAt(sort: Desc)])
+  @@index([price])
+  @@index([condition])
+  @@map("bikes")
+}
+
+model BikeImage {
+  id        String   @id @default(uuid())
+  bikeId    String   @map("bike_id")
+  publicId  String   @map("public_id")
+  url       String
+  order     Int      @default(0)
+  bike      Bike     @relation(fields: [bikeId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([bikeId])
+  @@map("bike_images")
+}
+
+model Settings {
+  id              String   @id @default(uuid())
+  businessName    String   @map("business_name")
+  phone           String
+  whatsapp        String
+  address         String
+  googleMapsEmbed String?  @map("google_maps_embed")
+  facebook        String?
+  instagram       String?
+  openingHours    String?  @map("opening_hours")
+  logoPublicId    String?  @map("logo_public_id")
+  logoUrl         String?  @map("logo_url")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}
+
+model AdminUser {
+  id             String   @id @default(uuid())
+  email          String   @unique
+  hashedPassword String   @map("hashed_password")
+  name           String
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  @@map("admin_users")
+}
