@@ -28,8 +28,8 @@ export function EmiCalculator({
   const monthlyRate = annualInterestRate / 12 / 100;
 
   const monthlyEmi = React.useMemo(() => {
-    if (principal <= 0 || tenureMonths <= 0) return 0;
-    if (monthlyRate === 0) return Math.round(principal / tenureMonths);
+    if (principal <= 0 || tenureMonths <= 0) {return 0;}
+    if (monthlyRate === 0) {return Math.round(principal / tenureMonths);}
 
     const emi =
       (principal * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) /
@@ -42,8 +42,8 @@ export function EmiCalculator({
 
   const handleDownPaymentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(e.target.value, 10);
-    if (isNaN(val)) setDownPayment(0);
-    else setDownPayment(Math.min(bikePrice, Math.max(0, val)));
+    if (isNaN(val)) {setDownPayment(0);}
+    else {setDownPayment(Math.min(bikePrice, Math.max(0, val)));}
   };
 
   return (

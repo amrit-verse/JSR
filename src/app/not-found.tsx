@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { Bike, Home, ArrowLeft } from "lucide-react";
+import { Bike, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {

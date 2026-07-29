@@ -31,9 +31,9 @@ export function getOptimizedCloudinaryUrl(
   const { width, height, quality = "auto", crop = "fill" } = options || {};
   const transformations: string[] = ["f_auto", `q_${quality}`];
 
-  if (width) transformations.push(`w_${width}`);
-  if (height) transformations.push(`h_${height}`);
-  if (width || height) transformations.push(`c_${crop}`);
+  if (width) {transformations.push(`w_${width}`);}
+  if (height) {transformations.push(`h_${height}`);}
+  if (width || height) {transformations.push(`c_${crop}`);}
 
   const transformString = transformations.join(",");
 

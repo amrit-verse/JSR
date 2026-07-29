@@ -1,7 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { BIKE_BRANDS } from "@/lib/constants";
 
 // Selected popular Indian motorcycle brands for visual showcase
 const FEATURED_BRANDS = [

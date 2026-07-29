@@ -12,6 +12,7 @@ const serverSchema = z.object({
   ADMIN_EMAIL: z.string().email("ADMIN_EMAIL must be a valid email"),
   ADMIN_PASSWORD: z.string().min(8, "ADMIN_PASSWORD must be at least 8 characters in production"),
   ADMIN_NAME: z.string().optional().default("Admin"),
+  CLOUDINARY_CLOUD_NAME: z.string().optional(),
   CLOUDINARY_API_KEY: z.string().min(1, "CLOUDINARY_API_KEY is required"),
   CLOUDINARY_API_SECRET: z.string().min(1, "CLOUDINARY_API_SECRET is required"),
 });
@@ -42,6 +43,7 @@ const parsed = mergedSchema.safeParse(
         ADMIN_EMAIL: process.env.ADMIN_EMAIL,
         ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
         ADMIN_NAME: process.env.ADMIN_NAME,
+        CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
         CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
         CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
         NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,

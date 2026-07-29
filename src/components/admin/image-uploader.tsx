@@ -46,7 +46,7 @@ export function ImageUploader({
   };
 
   const handleMakeCover = (index: number): void => {
-    if (index === 0) return;
+    if (index === 0) {return;}
     const items = [...value];
     const [selected] = items.splice(index, 1);
     items.unshift(selected);

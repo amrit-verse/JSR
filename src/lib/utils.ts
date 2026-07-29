@@ -155,8 +155,8 @@ export function calculateEMI(
   annualRate: number,
   tenureMonths: number
 ): number {
-  if (principal <= 0 || tenureMonths <= 0) return 0;
-  if (annualRate === 0) return Math.round(principal / tenureMonths);
+  if (principal <= 0 || tenureMonths <= 0) {return 0;}
+  if (annualRate === 0) {return Math.round(principal / tenureMonths);}
 
   const monthlyRate = annualRate / 12 / 100;
   const factor = Math.pow(1 + monthlyRate, tenureMonths);
@@ -172,7 +172,7 @@ export function calculateEMI(
  * Truncates text to a maximum length with ellipsis.
  */
 export function truncate(text: string, maxLength: number): string {
-  if (text.length <= maxLength) return text;
+  if (text.length <= maxLength) {return text;}
   return text.substring(0, maxLength).trim() + "…";
 }
 

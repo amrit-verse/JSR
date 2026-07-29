@@ -13,7 +13,6 @@ import {
   XCircle,
   Plus,
   Search,
-  Filter,
   Eye,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -123,7 +122,7 @@ export function BikeTable({
   };
 
   const handleDeleteConfirm = async (): Promise<void> => {
-    if (!deleteId) return;
+    if (!deleteId) {return;}
     setIsDeleting(true);
     try {
       const res = await deleteBikeAction(deleteId);

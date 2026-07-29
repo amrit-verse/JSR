@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { auth } from "@/lib/auth";
-import { bikeCreateSchema, bikeUpdateSchema } from "@/schemas/bike-schema";
+import { bikeCreateSchema } from "@/schemas/bike-schema";
 import { generateSlug, appendSlugSuffix } from "@/lib/utils";
 import { deleteCloudinaryImages } from "@/lib/cloudinary";
 import { MAX_FEATURED_BIKES, BIKES_PER_PAGE } from "@/lib/constants";
@@ -57,7 +57,7 @@ export async function createBikeAction(
     }
 
     // Generate unique slug
-    let baseSlug = generateSlug(data.year, data.brand, data.model, data.colour);
+    const baseSlug = generateSlug(data.year, data.brand, data.model, data.colour);
     let finalSlug = baseSlug;
 
     const existingSlug = await db.bike.findUnique({

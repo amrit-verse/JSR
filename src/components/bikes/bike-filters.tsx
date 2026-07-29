@@ -34,8 +34,9 @@ export function BikeFilters({
 
   // Sync search input if URL changes externally
   React.useEffect(() => {
-    setSearchQuery(searchParams.get("query") || "");
-  }, [searchParams]);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSearchQuery(currentSearch);
+  }, [currentSearch]);
 
   // Selected multi-filters
   const selectedBrands = searchParams.getAll("brand");
@@ -56,7 +57,7 @@ export function BikeFilters({
       params.delete(key);
       if (Array.isArray(value)) {
         value.forEach((val) => {
-          if (val) params.append(key, val);
+          if (val) {params.append(key, val);}
         });
       } else if (value !== null && value !== "") {
         params.set(key, value);

@@ -8,7 +8,7 @@ import { logger } from "./logger";
 
 // Configure Cloudinary SDK (server-side only)
 cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME || process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
@@ -41,9 +41,9 @@ export function getOptimizedCloudinaryUrl(
   const { width, height, quality = "auto", crop = "fill" } = options || {};
   const transformations: string[] = ["f_auto", `q_${quality}`];
 
-  if (width) transformations.push(`w_${width}`);
-  if (height) transformations.push(`h_${height}`);
-  if (width || height) transformations.push(`c_${crop}`);
+  if (width) {transformations.push(`w_${width}`);}
+  if (height) {transformations.push(`h_${height}`);}
+  if (width || height) {transformations.push(`c_${crop}`);}
 
   const transformString = transformations.join(",");
 
@@ -73,7 +73,7 @@ export async function deleteCloudinaryImage(publicId: string): Promise<void> {
 export async function deleteCloudinaryImages(
   publicIds: string[]
 ): Promise<void> {
-  if (publicIds.length === 0) return;
+  if (publicIds.length === 0) {return;}
 
   try {
     await cloudinary.api.delete_resources(publicIds);

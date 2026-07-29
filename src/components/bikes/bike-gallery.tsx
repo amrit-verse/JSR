@@ -39,10 +39,10 @@ export function BikeGallery({ images, title }: BikeGalleryProps): React.JSX.Elem
   // Keyboard navigation when in fullscreen
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isFullscreen) return;
-      if (e.key === "Escape") setIsFullscreen(false);
-      if (e.key === "ArrowRight") handleNext();
-      if (e.key === "ArrowLeft") handlePrev();
+      if (!isFullscreen) {return;}
+      if (e.key === "Escape") {setIsFullscreen(false);}
+      if (e.key === "ArrowRight") {handleNext();}
+      if (e.key === "ArrowLeft") {handlePrev();}
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
@@ -58,7 +58,7 @@ export function BikeGallery({ images, title }: BikeGalleryProps): React.JSX.Elem
   };
 
   const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
+    if (!touchStartX.current || !touchEndX.current) {return;}
     const distance = touchStartX.current - touchEndX.current;
     const minSwipeDistance = 40;
 

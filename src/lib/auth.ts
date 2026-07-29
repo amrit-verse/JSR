@@ -23,20 +23,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       async authorize(credentials) {
         // 1. Validate input shape
         const parsed = loginSchema.safeParse(credentials);
-        if (!parsed.success) return null;
+        if (!parsed.success) {return null;}
 
         // 2. Find admin user by email
         const user = await db.adminUser.findUnique({
           where: { email: parsed.data.email },
         });
-        if (!user) return null;
+        if (!user) {return null;}
 
         // 3. Verify password
         const passwordMatch = await compare(
           parsed.data.password,
           user.hashedPassword
         );
-        if (!passwordMatch) return null;
+        if (!passwordMatch) {return null;}
 
         // 4. Return user object (stored in JWT)
         return {
