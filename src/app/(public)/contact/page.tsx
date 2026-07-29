@@ -1,14 +1,34 @@
+"use client";
+
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, MapPin, Clock, ExternalLink, Send } from "lucide-react";
 
-export const metadata = {
-  title: "Contact Us | Jay Shree Ram Bike Point — Muzaffarpur",
-  description:
-    "Visit or call Jay Shree Ram Bike Point at Gobarsahi Chowk, Muzaffarpur, Bihar. Phone: +91 99342 12567. Instant WhatsApp inquiries and store directions.",
-};
+export const dynamic = "force-static";
 
 export default function ContactPage(): React.JSX.Element {
+  const [name, setName] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [bikeNeeded, setBikeNeeded] = React.useState("");
+  const [message, setMessage] = React.useState("");
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
+    e.preventDefault();
+    const parts = [
+      `Hello Jay Shree Ram Bike Point,`,
+      ``,
+      `Name: ${name || "Not provided"}`,
+      `Mobile: ${phone || "Not provided"}`,
+      bikeNeeded ? `Bike / Budget: ${bikeNeeded}` : null,
+      message ? `Message: ${message}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const waUrl = `https://wa.me/919934212567?text=${encodeURIComponent(parts)}`;
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+  }
+
   return (
     <div className="container mx-auto px-4 py-8 sm:py-12 space-y-10 max-w-5xl">
       {/* Page Header */}
@@ -24,7 +44,7 @@ export default function ContactPage(): React.JSX.Element {
         </p>
       </div>
 
-      {/* Main Grid: Direct Contact Cards & Quick Inquiry */}
+      {/* Main Grid: Contact Info + Inquiry Form */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column: Direct Dealership Contact Info (5 Cols) */}
         <div className="lg:col-span-5 space-y-4">
@@ -33,7 +53,7 @@ export default function ContactPage(): React.JSX.Element {
               Direct Dealership Contacts
             </h2>
 
-            {/* Phone Call Card */}
+            {/* Phone Call */}
             <div className="flex items-start gap-3.5">
               <div className="h-10 w-10 rounded-xl bg-saffron-500/10 text-saffron-600 dark:text-saffron-400 flex items-center justify-center shrink-0">
                 <Phone className="h-5 w-5" />
@@ -54,14 +74,14 @@ export default function ContactPage(): React.JSX.Element {
               </div>
             </div>
 
-            {/* WhatsApp Card */}
+            {/* WhatsApp */}
             <div className="flex items-start gap-3.5 border-t border-border pt-4">
               <div className="h-10 w-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
                 <MessageCircle className="h-5 w-5" />
               </div>
               <div className="space-y-1">
                 <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  WhatsApp Support
+                  WhatsApp
                 </span>
                 <p className="font-heading font-bold text-sm text-foreground">
                   +91 99342 12567
@@ -80,7 +100,7 @@ export default function ContactPage(): React.JSX.Element {
               </div>
             </div>
 
-            {/* Location Card */}
+            {/* Address */}
             <div className="flex items-start gap-3.5 border-t border-border pt-4">
               <div className="h-10 w-10 rounded-xl bg-saffron-500/10 text-saffron-600 dark:text-saffron-400 flex items-center justify-center shrink-0">
                 <MapPin className="h-5 w-5" />
@@ -104,12 +124,12 @@ export default function ContactPage(): React.JSX.Element {
               </div>
             </div>
 
-            {/* Timings Card */}
+            {/* Opening Hours */}
             <div className="flex items-start gap-3.5 border-t border-border pt-4">
               <div className="h-10 w-10 rounded-xl bg-muted text-muted-foreground flex items-center justify-center shrink-0">
                 <Clock className="h-5 w-5" />
               </div>
-              <div className="space-y-1">
+              <div className="space-y-0.5">
                 <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   Opening Hours
                 </span>
@@ -122,71 +142,83 @@ export default function ContactPage(): React.JSX.Element {
           </div>
         </div>
 
-        {/* Right Column: Direct Showroom Inquiry Form (7 Cols) */}
+        {/* Right Column: WhatsApp Inquiry Form (7 Cols) */}
         <div className="lg:col-span-7">
           <div className="p-6 sm:p-8 rounded-2xl bg-card border border-border shadow-card space-y-6">
             <div className="space-y-1">
               <h2 className="font-heading font-bold text-xl text-foreground">
-                Send Direct Message
+                Send Inquiry via WhatsApp
               </h2>
               <p className="text-xs text-muted-foreground">
-                Fill out your requirement and our dealership team will get back to you shortly.
+                Fill in your details below. Your message will be sent directly to our WhatsApp.
               </p>
             </div>
 
-            <form
-              action={`https://wa.me/919934212567`}
-              target="_blank"
-              className="space-y-4 text-xs font-medium"
-            >
+            <form onSubmit={handleSubmit} className="space-y-4 text-xs font-medium">
               <div className="space-y-1.5">
-                <label htmlFor="name" className="text-foreground font-semibold">Your Name</label>
+                <label htmlFor="contact-name" className="text-foreground font-semibold">
+                  Your Name <span className="text-rose-500">*</span>
+                </label>
                 <input
-                  id="name"
+                  id="contact-name"
                   type="text"
                   required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Ramesh Kumar"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-border bg-background text-foreground text-xs focus:outline-none focus:ring-2 focus:ring-saffron-500/50"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor="phone" className="text-foreground font-semibold">Mobile Number</label>
+                <label htmlFor="contact-phone" className="text-foreground font-semibold">
+                  Mobile Number <span className="text-rose-500">*</span>
+                </label>
                 <input
-                  id="phone"
+                  id="contact-phone"
                   type="tel"
                   required
-                  placeholder="e.g. +91 98765 43210"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="e.g. 98765 43210"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-border bg-background text-foreground text-xs focus:outline-none focus:ring-2 focus:ring-saffron-500/50"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor="bikeNeeded" className="text-foreground font-semibold">Bike / Budget Requirement</label>
+                <label htmlFor="contact-bike" className="text-foreground font-semibold">
+                  Bike / Budget Requirement
+                </label>
                 <input
-                  id="bikeNeeded"
+                  id="contact-bike"
                   type="text"
-                  placeholder="e.g. Hero Splendor under 50,000 or Honda Activa"
+                  value={bikeNeeded}
+                  onChange={(e) => setBikeNeeded(e.target.value)}
+                  placeholder="e.g. Hero Splendor under ₹50,000 or Honda Activa"
                   className="w-full px-3.5 py-2.5 rounded-xl border border-border bg-background text-foreground text-xs focus:outline-none focus:ring-2 focus:ring-saffron-500/50"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor="message" className="text-foreground font-semibold">Additional Message</label>
+                <label htmlFor="contact-message" className="text-foreground font-semibold">
+                  Additional Message
+                </label>
                 <textarea
-                  id="message"
+                  id="contact-message"
                   rows={3}
-                  placeholder="Write any specific question regarding RC transfer, condition, or visit timing..."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Any question about RC transfer, bike condition, or visit timing..."
                   className="w-full px-3.5 py-2.5 rounded-xl border border-border bg-background text-foreground text-xs focus:outline-none focus:ring-2 focus:ring-saffron-500/50"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-saffron-500 hover:bg-saffron-600 text-white font-bold h-11 rounded-xl gap-2 cursor-pointer"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold h-11 rounded-xl gap-2 cursor-pointer"
               >
                 <Send className="h-4 w-4" />
-                <span>Submit Inquiry via WhatsApp</span>
+                <span>Send via WhatsApp</span>
               </Button>
             </form>
           </div>
