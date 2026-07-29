@@ -122,10 +122,10 @@ Thank you.`;
 
 export const DEFAULT_SETTINGS = {
   businessName: "Jay Shree Ram Bike Point",
-  phone: "+91XXXXXXXXXX",
-  whatsapp: "+91XXXXXXXXXX",
-  address: "Muzaffarpur, Bihar, India",
-  openingHours: "Mon - Sat: 9:00 AM - 7:00 PM",
+  phone: "+919934212567",
+  whatsapp: "+919934212567",
+  address: "Gobarsahi Chowk, Muzaffarpur, Bihar 842001",
+  openingHours: "Mon – Sat: 9:00 AM – 7:30 PM (Sun: Closed)",
 } as const;
 
 // =============================================================================
