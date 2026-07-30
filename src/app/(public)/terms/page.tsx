@@ -1,9 +1,9 @@
 import * as React from "react";
 
 export const metadata = {
-  title: "Terms & RC Guidelines | Jay Shree Ram Bike Point",
+  title: "Terms & RC Guidelines | Jai Shree Ram Bike Point",
   description:
-    "Dealership terms, paper transfer guidelines, and purchase conditions for Jay Shree Ram Bike Point, Muzaffarpur.",
+    "Dealership terms, paper transfer guidelines, and purchase conditions for Jai Shree Ram Bike Point, Sipahpur, Muzaffarpur.",
 };
 
 export default function TermsPage(): React.JSX.Element {
@@ -14,14 +14,14 @@ export default function TermsPage(): React.JSX.Element {
           Terms & Registration Transfer Guidelines
         </h1>
         <p className="text-xs text-muted-foreground mt-1">
-          Jay Shree Ram Bike Point • Gobarsahi Chowk, Muzaffarpur, Bihar
+          Jai Shree Ram Bike Point • No-04, Imamganj Naka, Sipahpur, Bihar 842001
         </p>
       </div>
 
       <section className="space-y-2">
         <h2 className="text-sm font-heading font-bold text-foreground">1. Vehicle Inspection & Sale Terms</h2>
         <p>
-          All pre-owned motorcycles and scooters displayed at Jay Shree Ram Bike Point are sold following physical mechanic inspection and test ride at our Gobarsahi Chowk showroom. Prices listed on the website are indicative and confirmed upon in-person vehicle inspection.
+          All pre-owned motorcycles and scooters displayed at Jai Shree Ram Bike Point are sold following physical mechanic inspection and test ride at our Sipahpur showroom. Prices listed on the website are indicative and confirmed upon in-person vehicle inspection.
         </p>
       </section>
 
@@ -42,7 +42,7 @@ export default function TermsPage(): React.JSX.Element {
       <section className="space-y-2">
         <h2 className="text-sm font-heading font-bold text-foreground">4. Contact Information</h2>
         <p>
-          For any clarifications regarding dealership terms or document status, contact us at Gobarsahi Chowk, Muzaffarpur, Bihar 842001 or call +91 99342 12567.
+          For any clarifications regarding dealership terms or document status, contact us at No-04, Imamganj, Naka, Sipahpur, Bihar 842001 or call +91 62037 77760.
         </p>
       </section>
     </div>

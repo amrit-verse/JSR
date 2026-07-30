@@ -1,9 +1,9 @@
 import * as React from "react";
 
 export const metadata = {
-  title: "Privacy Policy | Jay Shree Ram Bike Point",
+  title: "Privacy Policy | Jai Shree Ram Bike Point",
   description:
-    "Privacy Policy for Jay Shree Ram Bike Point, Gobarsahi Chowk, Muzaffarpur, Bihar.",
+    "Privacy Policy for Jai Shree Ram Bike Point, No-04, Imamganj Naka, Sipahpur, Bihar.",
 };
 
 export default function PrivacyPolicyPage(): React.JSX.Element {
@@ -14,14 +14,14 @@ export default function PrivacyPolicyPage(): React.JSX.Element {
           Privacy Policy
         </h1>
         <p className="text-xs text-muted-foreground mt-1">
-          Effective Date: {new Date().getFullYear()} • Jay Shree Ram Bike Point, Muzaffarpur
+          Effective Date: {new Date().getFullYear()} • Jai Shree Ram Bike Point, Sipahpur, Muzaffarpur
         </p>
       </div>
 
       <section className="space-y-2">
         <h2 className="text-sm font-heading font-bold text-foreground">1. Information We Collect</h2>
         <p>
-          Jay Shree Ram Bike Point collects basic contact information (such as your name, mobile number, and bike preferences) when you submit an inquiry form or initiate a WhatsApp/phone call with our dealership team at Gobarsahi Chowk, Muzaffarpur.
+          Jai Shree Ram Bike Point collects basic contact information (such as your name, mobile number, and bike preferences) when you submit an inquiry form or initiate a WhatsApp/phone call with our dealership team at No-04, Imamganj Naka, Sipahpur, Muzaffarpur.
         </p>
       </section>
 
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage(): React.JSX.Element {
       <section className="space-y-2">
         <h2 className="text-sm font-heading font-bold text-foreground">4. Contact Us</h2>
         <p>
-          If you have any questions regarding your data or privacy, visit us at Gobarsahi Chowk, Muzaffarpur, Bihar 842001 or call +91 99342 12567.
+          If you have any questions regarding your data or privacy, visit us at No-04, Imamganj, Naka, Sipahpur, Bihar 842001 or call +91 62037 77760.
         </p>
       </section>
     </div>

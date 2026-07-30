@@ -60,15 +60,15 @@ async function main(): Promise<void> {
   } else {
     await prisma.settings.create({
       data: {
-        businessName: "Jay Shree Ram Bike Point",
-        phone: "+919934212567",
-        whatsapp: "+919934212567",
-        address: "Gobarsahi Chowk, Muzaffarpur, Bihar 842001",
-        openingHours: "Mon – Sat: 9:00 AM – 7:30 PM (Sun: Closed)",
-        googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.8762744365775!2d85.35824587630455!3d26.11540197713217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed10e75a6c11b1%3A0x6b8fbd86bd56549c!2sGobarsahi%20Chowk!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+        businessName: "Jai Shree Ram Bike Point",
+        phone: "+916203777760",
+        whatsapp: "+916203777760",
+        address: "No-04, Imamganj, Naka, Sipahpur, Bihar 842001, India",
+        openingHours: "Mon – Sat: 9:00 AM – 7:00 PM",
+        googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.8762744365775!2d85.4114003!3d26.155375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed117d17a322f9%3A0xb509c0e45b2772f3!2sJAI%20SHREE%20RAM%20BIKE%20POINT!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
       },
     });
-    console.log("✓ Business settings created with Gobarsahi Chowk address.");
+    console.log("✓ Business settings created with Sipahpur address.");
   }
 
   // ─── 3. Sample Bikes (Strictly skipped in production) ─────────────────

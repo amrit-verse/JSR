@@ -49,6 +49,6 @@ test.describe("Admin Authentication & Bike CRUD Workflow", () => {
     await page.goto("/");
     await expect(page.locator("h1")).toContainText("Browse Inspected");
     await expect(page.getByText("Popular Bike Brands")).toBeVisible();
-    await expect(page.getByText("Gobarsahi Chowk, Muzaffarpur").first()).toBeVisible();
+    await expect(page.getByText("Sipahpur, Bihar 842001").first()).toBeVisible();
   });
 });

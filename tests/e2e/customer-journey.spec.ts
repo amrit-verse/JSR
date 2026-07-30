@@ -6,7 +6,7 @@ test.describe("Milestone 4 — Customer Journey & Public Storefront Workflow", (
 
     // Verify main hero headline & dealearship location badge
     await expect(page.locator("h1")).toContainText("Browse Inspected");
-    await expect(page.getByText("Gobarsahi Chowk, Muzaffarpur").first()).toBeVisible();
+    await expect(page.getByText("Sipahpur, Bihar 842001").first()).toBeVisible();
 
     // Verify quick action buttons
     const exploreBtn = page.locator('a:has-text("Browse Full Inventory")').first();

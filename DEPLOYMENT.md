@@ -1,6 +1,6 @@
-# Production Deployment Guide — Jay Shree Ram Bike Point
+# Production Deployment Guide — Jai Shree Ram Bike Point
 
-This guide provides step-by-step instructions for deploying **Jay Shree Ram Bike Point** to **Vercel** with a **Neon PostgreSQL** production database and **Cloudinary** media storage.
+This guide provides step-by-step instructions for deploying **Jai Shree Ram Bike Point** to **Vercel** with a **Neon PostgreSQL** production database and **Cloudinary** media storage.
 
 ---
 
@@ -58,7 +58,7 @@ Before starting deployment, ensure you have:
 | `AUTH_URL` | Production Domain URL | `https://jsrbikepoint.com` |
 | `ADMIN_EMAIL` | Production Admin Email | `admin@jsrbikepoint.com` |
 | `ADMIN_PASSWORD` | Strong Production Password | `StrongPass123!#` |
-| `ADMIN_NAME` | Admin Display Name | `Jay Shree Ram Admin` |
+| `ADMIN_NAME` | Admin Display Name | `Jai Shree Ram Admin` |
 | `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` | Cloudinary Cloud Name | `jsr_bikepoint_prod` |
 | `CLOUDINARY_API_KEY` | Cloudinary API Key | `123456789012345` |
 | `CLOUDINARY_API_SECRET` | Cloudinary API Secret | `your_secret_key` |
@@ -98,7 +98,7 @@ NODE_ENV="production" DATABASE_URL="<your_neon_pooled_url>" ADMIN_EMAIL="admin@j
 ## 7. Step 6: Post-Deployment Verification
 
 1. Access `https://jsrbikepoint.com` in a browser.
-2. Confirm the homepage loads with business information for Gobarsahi Chowk, Muzaffarpur.
+2. Confirm the homepage loads with business information for No-04, Imamganj Naka, Sipahpur, Muzaffarpur.
 3. Access `https://jsrbikepoint.com/admin/login` and verify logging in with your `ADMIN_EMAIL` and `ADMIN_PASSWORD`.
 4. Verify creating a new bike listing with Cloudinary image upload.
 5. Check `https://jsrbikepoint.com/sitemap.xml` and `https://jsrbikepoint.com/robots.txt`.

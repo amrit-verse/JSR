@@ -1,4 +1,4 @@
-# Jay Shree Ram Bike Point 🏍️
+# Jai Shree Ram Bike Point 🏍️
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
@@ -8,7 +8,7 @@
 [![Cloudinary](https://img.shields.io/badge/Cloudinary-Media_CDN-3448C5?style=for-the-badge&logo=cloudinary)](https://cloudinary.com/)
 [![Playwright](https://img.shields.io/badge/Playwright-E2E_Tested-2EAD33?style=for-the-badge&logo=playwright)](https://playwright.dev/)
 
-A modern, high-performance, full-stack web application and inventory management platform for **Jay Shree Ram Bike Point**, a premium second-hand motorcycle and scooter dealership located at **Gobarsahi Chowk, Muzaffarpur, Bihar**.
+A modern, high-performance, full-stack web application and inventory management platform for **Jai Shree Ram Bike Point**, a verified second-hand motorcycle and scooter dealership located at **No-04, Imamganj Naka, Sipahpur, Muzaffarpur, Bihar**.
 
 Built with Next.js 16 (App Router & Server Actions), React 19, Tailwind CSS v4, Prisma ORM, Neon Serverless PostgreSQL, Cloudinary Image CDN, Auth.js v5, and Playwright E2E testing.
 
@@ -170,4 +170,4 @@ For complete instructions on deploying to **Vercel** with **Neon PostgreSQL Conn
 
 ## 📄 License
 
-This project is proprietary software created for **Jay Shree Ram Bike Point**, Gobarsahi Chowk, Muzaffarpur, Bihar. All rights reserved.
+This project is proprietary software created for **Jai Shree Ram Bike Point**, No-04, Imamganj Naka, Sipahpur, Muzaffarpur, Bihar. All rights reserved.

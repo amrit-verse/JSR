@@ -64,7 +64,7 @@
 - [x] **Active Filter Pills Bar**: Live filter tags with instant "Clear All" action.
 - [x] **Helpful Empty State**: Displays search suggestions and "Clear All Filters" button when 0 results match.
 - [x] **Breadcrumb Navigation**: Hierarchical `Home / Inventory / [Bike Title]` breadcrumb on all detail pages.
-- [x] **Key Spec Summary**: Price, Condition, Availability status, and Gobarsahi Chowk location highlighted BEFORE full specifications.
+- [x] **Key Spec Summary**: Price, Condition, Availability status, and Sipahpur location highlighted BEFORE full specifications.
 - [x] **Responsive Image Gallery**: Fullscreen zoom lightbox modal, touch swipe support for mobile, and thumbnail selector.
 - [x] **Renamed Primary CTA**: "Enquire on WhatsApp" with pre-filled vehicle details and link.
 - [x] **Simple Default EMI Calculator**: Down payment slider, quick tenure buttons, and deferred advanced interest rate customization toggle.
