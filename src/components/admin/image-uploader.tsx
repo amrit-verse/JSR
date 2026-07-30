@@ -71,8 +71,15 @@ export function ImageUploader({
         {value.length < MAX_IMAGES_PER_BIKE && (
           <CldUploadWidget
             signatureEndpoint="/api/sign-cloudinary-params"
-            uploadPreset="ml_default" // Signed upload
+            uploadPreset="ml_default"
+            config={{
+              cloud: {
+                cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+                apiKey: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+              },
+            }}
             options={{
+              apiKey: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
               maxFiles: MAX_IMAGES_PER_BIKE - value.length,
               folder: CLOUDINARY_FOLDER,
               clientAllowedFormats: ["jpg", "jpeg", "png", "webp"],
@@ -164,7 +171,14 @@ export function ImageUploader({
         <CldUploadWidget
           signatureEndpoint="/api/sign-cloudinary-params"
           uploadPreset="ml_default"
+          config={{
+            cloud: {
+              cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+              apiKey: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+            },
+          }}
           options={{
+            apiKey: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
             maxFiles: MAX_IMAGES_PER_BIKE,
             folder: CLOUDINARY_FOLDER,
             clientAllowedFormats: ["jpg", "jpeg", "png", "webp"],

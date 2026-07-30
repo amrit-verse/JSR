@@ -1,10 +1,3 @@
-// =============================================================================
-// Jay Shree Ram Bike Point — Prisma Schema
-// =============================================================================
-// Database: PostgreSQL (Neon Serverless)
-// Convention: camelCase in Prisma, snake_case in PostgreSQL via @map()
-// =============================================================================
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,37 +7,6 @@ datasource db {
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
-
-// =============================================================================
-// Enums
-// =============================================================================
-
-enum FuelType {
-  PETROL
-  ELECTRIC
-}
-
-enum Transmission {
-  MANUAL
-  AUTOMATIC
-}
-
-enum BikeCondition {
-  EXCELLENT
-  VERY_GOOD
-  GOOD
-  AVERAGE
-}
-
-enum OwnerNumber {
-  FIRST
-  SECOND
-  THIRD_PLUS
-}
-
-// =============================================================================
-// Models
-// =============================================================================
 
 model Bike {
   id                 String        @id @default(uuid())
@@ -68,9 +30,9 @@ model Bike {
   rcAvailable        Boolean       @default(false) @map("rc_available")
   insuranceAvailable Boolean       @default(false) @map("insurance_available")
   taxPaid            Boolean       @default(false) @map("tax_paid")
-  images             BikeImage[]
   createdAt          DateTime      @default(now()) @map("created_at")
   updatedAt          DateTime      @updatedAt @map("updated_at")
+  images             BikeImage[]
 
   @@index([brand])
   @@index([isFeatured, isSold])
@@ -86,8 +48,8 @@ model BikeImage {
   publicId  String   @map("public_id")
   url       String
   order     Int      @default(0)
-  bike      Bike     @relation(fields: [bikeId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now()) @map("created_at")
+  bike      Bike     @relation(fields: [bikeId], references: [id], onDelete: Cascade)
 
   @@index([bikeId])
   @@map("bike_images")
@@ -119,4 +81,27 @@ model AdminUser {
   updatedAt      DateTime @updatedAt @map("updated_at")
 
   @@map("admin_users")
+}
+
+enum FuelType {
+  PETROL
+  ELECTRIC
+}
+
+enum Transmission {
+  MANUAL
+  AUTOMATIC
+}
+
+enum BikeCondition {
+  EXCELLENT
+  VERY_GOOD
+  GOOD
+  AVERAGE
+}
+
+enum OwnerNumber {
+  FIRST
+  SECOND
+  THIRD_PLUS
 }
