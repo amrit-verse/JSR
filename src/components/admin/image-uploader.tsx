@@ -139,12 +139,12 @@ export function ImageUploader({
                   setWidgetError("Cloudinary widget failed to load");
                   return;
                 }
-                if (!widget || typeof open !== "function") {
-                  console.error("Cloudinary Upload Widget instance is not ready or failed to initialize.");
-                  setWidgetError("Uploader script is not ready. Please try again.");
+                if (typeof open === "function") {
+                  (open as () => void)();
                   return;
                 }
-                open();
+                console.error("Cloudinary Upload Widget instance is not ready or failed to initialize.");
+                setWidgetError("Uploader script is not ready. Please try again.");
               };
 
               return (
@@ -252,12 +252,12 @@ export function ImageUploader({
                 setWidgetError("Cloudinary widget failed to load");
                 return;
               }
-              if (!widget || typeof open !== "function") {
-                console.error("Cloudinary Upload Widget instance is not ready or failed to initialize.");
-                setWidgetError("Uploader script is not ready. Please try again.");
+              if (typeof open === "function") {
+                open();
                 return;
               }
-              open();
+              console.error("Cloudinary Upload Widget instance is not ready or failed to initialize.");
+              setWidgetError("Uploader script is not ready. Please try again.");
             };
 
             return (
