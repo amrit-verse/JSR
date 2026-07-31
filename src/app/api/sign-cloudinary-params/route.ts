@@ -27,8 +27,13 @@ export async function POST(request: Request): Promise<Response> {
       );
     }
 
+    const params =
+      typeof paramsToSign === "string"
+        ? JSON.parse(paramsToSign)
+        : (paramsToSign as Record<string, string>);
+
     const signature = cloudinary.utils.api_sign_request(
-      JSON.parse(paramsToSign) as Record<string, string>,
+      params,
       process.env.CLOUDINARY_API_SECRET!
     );
 
