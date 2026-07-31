@@ -2,12 +2,12 @@ import type { NextConfig } from "next";
 
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://res.cloudinary.com https://maps.googleapis.com https://va.vercel-scripts.com https://vitals.vercel-insights.com;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://res.cloudinary.com https://upload-widget.cloudinary.com https://maps.googleapis.com https://va.vercel-scripts.com https://vitals.vercel-insights.com;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     img-src 'self' data: blob: https://res.cloudinary.com https://images.unsplash.com https://maps.gstatic.com https://*.googleapis.com https://*.ggpht.com;
     font-src 'self' https://fonts.gstatic.com data:;
-    connect-src 'self' https://res.cloudinary.com https://api.cloudinary.com https://vitals.vercel-insights.com https://va.vercel-scripts.com;
-    frame-src 'self' https://www.google.com https://maps.google.com;
+    connect-src 'self' https://res.cloudinary.com https://api.cloudinary.com https://upload-widget.cloudinary.com https://vitals.vercel-insights.com https://va.vercel-scripts.com;
+    frame-src 'self' https://upload-widget.cloudinary.com https://www.google.com https://maps.google.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self';

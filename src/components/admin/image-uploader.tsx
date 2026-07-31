@@ -70,6 +70,10 @@ export function ImageUploader({
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
   const apiKey = process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY;
 
+  // Guard: if env vars are missing, CldUploadWidget will throw during render
+  // and crash the entire page via the error boundary.
+  const missingConfig = !cloudName || !apiKey;
+
   const widgetConfig = {
     cloud: {
       cloudName,
@@ -86,6 +90,23 @@ export function ImageUploader({
   };
 
   const displayedError = externalError || widgetError;
+
+  if (missingConfig) {
+    return (
+      <div className="space-y-4">
+        <div className="flex items-center gap-2 p-4 rounded-lg bg-destructive/10 text-destructive text-sm font-semibold">
+          <AlertCircle className="h-5 w-5 shrink-0" />
+          <div>
+            <p>Image uploader is not configured.</p>
+            <p className="text-xs font-normal mt-1 text-muted-foreground">
+              Missing environment variable: {!cloudName && "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME"}{!cloudName && !apiKey && ", "}{!apiKey && "NEXT_PUBLIC_CLOUDINARY_API_KEY"}.
+              Please add it to Vercel environment variables and redeploy.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-4">
