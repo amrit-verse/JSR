@@ -19,6 +19,7 @@ import {
   OWNER_NUMBER_LABELS,
   getWhatsAppMessage,
 } from "@/lib/constants";
+import { getBikeJsonLd } from "@/lib/metadata";
 import {
   ChevronRight,
   MessageCircle,
@@ -80,8 +81,14 @@ export default async function BikeDetailPage({
   const whatsappMsg = getWhatsAppMessage(title, formatPrice(bike.price));
   const whatsappUrl = getWhatsAppUrl("+916203777760", whatsappMsg);
 
+  const bikeJsonLd = getBikeJsonLd(bike);
+
   return (
     <div className="container mx-auto px-4 py-6 sm:py-10 space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bikeJsonLd) }}
+      />
       {/* 10. Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-muted-foreground">
         <Link href="/" className="hover:text-foreground transition-colors">

@@ -52,6 +52,9 @@ export function getBaseMetadata(): Metadata {
         "max-snippet": -1,
       },
     },
+    verification: {
+      google: "2Qed6_xczrk_9zQRGHh3F6lYqK4eDRTF9wBTEGgGjRk",
+    },
     openGraph: {
       type: "website",
       locale: "en_IN",

@@ -26,6 +26,16 @@ export function ImageUploader({
 }: ImageUploaderProps): React.JSX.Element {
   const [widgetError, setWidgetError] = React.useState<string | null>(null);
 
+  // Restore body scroll after the Cloudinary widget closes.
+  // The widget's external JS sets overflow:hidden on <body> when its modal
+  // opens but can fail to remove it on close, permanently freezing scroll.
+  const handleClose = (): void => {
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+  };
+
   const handleSuccess = (results: CloudinaryUploadWidgetResults): void => {
     if (typeof results.info === "object" && results.info?.secure_url && results.info?.public_id) {
       const newImage: UploadedImage = {
@@ -131,6 +141,7 @@ export function ImageUploader({
             }}
             onSuccess={handleSuccess}
             onError={handleError}
+            onClose={handleClose}
           >
             {({ open, widget, error: renderError, isLoading }) => {
               const handleOpen = () => {
@@ -244,6 +255,7 @@ export function ImageUploader({
           }}
           onSuccess={handleSuccess}
           onError={handleError}
+          onClose={handleClose}
         >
           {({ open, widget, error: renderError, isLoading }) => {
             const handleOpen = () => {

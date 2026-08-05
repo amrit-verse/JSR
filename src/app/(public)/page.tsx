@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { PopularBrands } from "@/components/home/popular-brands";
 import { BikeCard } from "@/components/bikes/bike-card";
 import { getHomepageData } from "@/actions/bike-actions";
+import { getBusinessJsonLd } from "@/lib/metadata";
 import { ShieldCheck, Award, ThumbsUp, ArrowRight, PhoneCall, Sparkles } from "lucide-react";
 
 export const metadata = {
@@ -15,8 +16,19 @@ export const metadata = {
 export default async function HomePage(): Promise<React.JSX.Element> {
   const { featuredBikes, latestArrivals, totalAvailable } = await getHomepageData();
 
+  const businessJsonLd = getBusinessJsonLd({
+    businessName: "Jai Shree Ram Bike Point",
+    phone: "+916203777760",
+    address: "No-04, Imamganj, Naka, Sipahpur, Muzaffarpur",
+    openingHours: "Mo-Sa 09:00-19:00",
+  });
+
   return (
     <div className="space-y-12 sm:space-y-16 py-6 sm:py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+      />
       {/* 1. Inventory-Focused Hero Section */}
       <section className="container mx-auto px-4">
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-charcoal-950 via-charcoal-900 to-saffron-950/40 border border-charcoal-800 text-white p-6 sm:p-10 md:p-12 shadow-2xl">
